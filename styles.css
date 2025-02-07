@@ -1,0 +1,363 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #121212, #333);
+    color: #e0e0e0;
+}
+
+/* Encabezado */
+.header {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0px 0;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    transition: background 0.3s;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.2s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #f4d03f;
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sección Hero */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    /*background: url('DEV-CODE-4K.png') no-repeat center center/cover;*/
+}
+
+.hero-title {
+    margin-bottom: 10pz;
+    margin-top: 0px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #f4d03f;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    background: #f4d03f;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.hero-button:hover {
+    transform: scale(1.1);
+    background: #ffcc00;
+}
+
+/* Estilos para la imagen del Hero */
+.hero-img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-out, float 3s infinite alternate ease-in-out;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto de Hover */
+.hero-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de flotación */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Icons Social */
+.social-icons{
+    margin-top: 10px;
+}
+
+/* Tarjetas de secciones */
+.section-container {
+    max-width: 900px;
+    margin: 50px auto 40px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.section-title {
+    text-align: center;
+    color: #f4d03f;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Proyecto */
+/* Contenedor de proyectos */
+.project {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: transform 0.4s, box-shadow 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Efecto de sombra y elevación al pasar el cursor */
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de entrada */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación al hacer scroll */
+.project.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+/* Lista de habilidades */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+.skill-item {
+    list-style: none;
+    background: #007bff;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto de hover */
+.skill-item:hover {
+    transform: scale(1.1);
+    background: var(--random-color, #ffcc00); /* Color aleatorio generado con JS */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-item {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+
+/* Contacto */
+/* Animación de aparición */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a la sección de contacto */
+#contact {
+    opacity: 0;
+    animation: slideIn 1.2s ease-out forwards;
+}
+
+/* Animación en los enlaces */
+.contact-info a {
+    color: #f4d03f;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-info a::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #f4d03f;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.contact-info a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Efecto de luz al pasar sobre la sección */
+#contact:hover {
+    box-shadow: 0px 0px 20px rgba(244, 208, 63, 0.6);
+}
+
+/* Certificate */
+.certificate-info a {
+    color: #f4d03f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.certificate-info a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Botón flotante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f4d03f;
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    border: none;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
